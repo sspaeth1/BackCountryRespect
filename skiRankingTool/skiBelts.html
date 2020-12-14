@@ -50,14 +50,14 @@
     .bottom{
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: center;
         margin-top:5%;
     }
 
     .top {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding:3%; 
     }
 
@@ -89,22 +89,18 @@
 
 .topText{
     color: #2057A8;
-    max-width: 36%;
     display: flex;
     flex-flow: column wrap;
 }
 
 .topTextLower {
-    color: #2057A8;
+    color: #555;;
    margin:1%;
    align-items: flex-start;
    border-top: 1px solid #2057A8;
 }
 
 @media screen and (max-width: 700px ) {
-        .top{
-          justify-content: center;            
-        }
         .top .column:last-of-type{
            margin-left: 0;
         }
@@ -187,7 +183,7 @@ label{
 }
 
 svg{
-    margin: 2%;
+    margin: 20px;
     align-self: center;
     width: 200px;
     height: 200px;
@@ -211,7 +207,7 @@ svg{
 }
 
 .poweredBy, .poweredBy a{
-    margin: 2% 0;
+    margin: 7% 0;
     font-size: 15px;
     color: #c7daeb;
 }
@@ -276,10 +272,11 @@ svg{
     color: #fff;
     font-size: 22px;
     position: relative;
-    left: 175px;
-    bottom: 45px;
+    left: -78px;
+    bottom: 35px;
     mix-blend-mode: overlay;
 }
+
 
 /* Dropdown end */
 
@@ -345,7 +342,7 @@ svg{
               <path class="cls-13" d="M68.24,95a60.41,60.41,0,0,1-15,1.84c-5.07.07-10.12-.27-15.16-.69s-10-1.09-15-1.82l-7.48-1.15c-2.49-.43-5-.84-7.46-1.31,2.52.25,5,.56,7.53.82l7.51.88c5,.57,10,1.17,15,1.59s10,.82,15.07.91c1.25.05,2.51,0,3.77,0s2.51-.07,3.76-.17A59.28,59.28,0,0,0,68.24,95Z" transform="translate(0.35)"/>
             </g>
           </g>
-        </g>
+
 
         
         
@@ -435,7 +432,7 @@ svg{
             <label for="avyTraining">Formal Avy Training</label>
             <div class="dropdown big">    
             <select name="avyTraining" id="avyTraining">
-                    <option value="0" selected>none</option>
+                    <option value="1" selected>none</option>
                     <option value="2">Mtn Sense Course</option>
                     <option value="2">Rec Level 1</option>
                     <option value="3">Rec Level 2</option>
@@ -527,7 +524,7 @@ svg{
     </div>
     <button type="button" id='resetButton' onclick="resetAll()">Reset</button>
 </form>
-<div class="poweredBy">coded by <a href="https://biochromatic.com/">Biochromatic</a></div>
+<div class="poweredBy">Coded by Shlomo Spaeth <a href="https://biochromatic.com/">Biochromatic</a></div>
 </section>
   
 </div>
@@ -549,7 +546,7 @@ svg{
 
 
     const beltHexColor = [
-                            {"white": '#F2F4F7'},
+                            {"white": '#fff'},
                             {"yellow": '#FFF039'},
                             {"orange": '#F48427'},
                             {"purple": '#4421A5'},
@@ -566,6 +563,7 @@ svg{
             if( el ===  Object.keys(obj)[0]){
                 document.getElementById('questionMark').setAttribute('opacity', '0' );
                 document.getElementById('bg').setAttribute('fill',Object.values(obj)[0] );
+                document.getElementById('total').setAttribute('style', 'mix-blend-mode:overlay; color:#fff;');
                 return Object.values(obj)[0];
             };
          })
@@ -586,7 +584,7 @@ svg{
             let newStripe = document.createElementNS("http://www.w3.org/2000/svg", 'path');
             newStripe.setAttribute("d","M " + x + " 0 L " + x +" 200"); 
             newStripe.setAttribute('class', 'addToStripeCount');
-            newStripe.style.stroke = "#fff"; 
+            newStripe.style.stroke = "#fbfbfb"; 
             newStripe.style.strokeWidth = "5px"; 
             stripeChld.appendChild(newStripe);
         }
@@ -680,6 +678,7 @@ svg{
                     document.getElementById('beltColorId').innerText = ` ${belt} `;
                     localStorage.setItem('belt', "white");
                     getBeltHexColor(belt);
+                    document.getElementById('total').setAttribute('style', 'mix-blend-mode:difference; color: #333;');
                 }else if(val >= 10 && val <= 19){
                     belt = "yellow"
                     document.getElementById('beltColorId').innerText = ` ${belt} `;
@@ -707,14 +706,15 @@ svg{
                     getBeltHexColor(belt);
                 }else if(val >= 60 && val <= 69){
                     belt = "brown";
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerText =  ` ${belt} `;
                     localStorage.setItem('belt', "brown");
                     getBeltHexColor(belt);
                 }else if(val >=70){
                     belt = "black";
-                    document.getElementById('beltColorId').innerText = belt;
+                    document.getElementById('beltColorId').innerText =  ` ${belt} `;
                     localStorage.setItem('belt', "black");
                     getBeltHexColor(belt);
+                    document.getElementById('total').setAttribute('style', 'mix-blend-mode:difference');
                 }
         }
     document.getElementById('BackcountryDays').onchange = function(el){
