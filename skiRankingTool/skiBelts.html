@@ -17,9 +17,16 @@
         font-family:  "AlergreySans", sans-serif;
     }
     form{
-        display: flex;     
-        justify-content: center;
+        display: flex;
         flex-flow: column;
+        max-width: 63%;
+        margin: auto;
+    }
+
+    .container{
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: center; 
     }
 
     .row{
@@ -83,6 +90,15 @@
 .topText{
     color: #2057A8;
     max-width: 36%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.topTextLower {
+    color: #2057A8;
+   margin:1%;
+   align-items: flex-start;
+   border-top: 1px solid #2057A8;
 }
 
 @media screen and (max-width: 700px ) {
@@ -205,64 +221,85 @@ svg{
 }
 
 
+.cls-1 {
+    fill: #2057a8;
+}
+
+.cls-2 {
+    fill: #fff4eb;
+}
+
+.cls-3 {
+    opacity: 1;
+}
+
+.cls-4, .cls-5 {
+    fill: #E2E2E2;
+    mix-blend-mode: overlay;
+}
+
+.cls-4, .cls-5, .cls-6 {
+    stroke: #282828;
+}
+
+.cls-4, .cls-6 {
+    stroke-width: 1.25px;
+}
+
+.cls-5 {
+    stroke-width: 0.63px;
+}
+
+.cls-6 {
+    fill: none;
+}
+.cls-7{
+    stroke: #2057a8;
+    stroke-width: 5px;
+}
+.cls-11 {
+    fill: #2057a8;
+    }
+
+.cls-12 {
+    fill: #efe6e6;
+    stroke: #282828;
+    mix-blend-mode: luminosity;
+    }
+
+.cls-13 {
+    fill: #282828;
+    mix-blend-mode: overlay;
+    }
+
+#total{
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+    left: 175px;
+    bottom: 45px;
+    mix-blend-mode: overlay;
+}
+
 /* Dropdown end */
 
 
 </style>
 
 
-<div class="column">
-  <div class="row">
-    <div class='topText'>
-        <h1>So What’s your skiing ability?</h1>
-<p>Goal: Easily communicate your abilities with potential ski partners </p>
-       <p class="beltRank"> I'm a<span id="beltColorId"> ___  </span>belt 
-        <span id="total" style="color:grey; font-size: 15px">  </span></p>
-       <div class="stripeRank" id="beltStripesId"></div> 
-       <p>The main purpose of this file is the start the conversion with a new partner. Get on the same page with your ability as it compares to their ability. It's a tool that you can use as it works for you. Change it as you like.</p>
-        <p>Partners with similar color to yours make for great partnership, Rise through the ranks together.</p>     
-    </div>
-    <div class="svg">
+<div class="container">
+    <div class="column">
+   <div class="row">
+        <div class='topText'>
+            <h1>So What’s your skiing ability?</h1>
+            <p>Goal: Easily communicate your abilities with potential ski partners </p>
+           <p class="beltRank"> I'm a<span id="beltColorId"> ___  </span>belt 
+        </p>
+            <div class="stripeRank" id="beltStripesId"></div> 
+        </div>
+         <div class="svg">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.48 200">
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: #2057a8;
-                }
-          
-                .cls-2 {
-                  fill: #fff4eb;
-                }
-          
-                .cls-3 {
-                  opacity: 1;
-                }
-          
-                .cls-4, .cls-5 {
-                  fill: #E2E2E2;
-                }
-          
-                .cls-4, .cls-5, .cls-6 {
-                  stroke: #282828;
-                }
-          
-                .cls-4, .cls-6 {
-                  stroke-width: 1.25px;
-                }
-          
-                .cls-5 {
-                  stroke-width: 0.63px;
-                }
-          
-                .cls-6 {
-                  fill: none;
-                }
-                .cls-7{
-                 stroke: #2057a8;
-                 stroke-width: 5px;
-                }
-              </style>
-            </defs>
+
             <title>belt_rating_icon</title>
             <g id="bg">
               <rect id="bg" data-name="BG" fill="" x="0.17" width="200" height="200"/>
@@ -272,22 +309,63 @@ svg{
                 </g>
             </g>
             <g id="belt">
-              <g id="belt-white" class="cls-3">
-                <path class="cls-4" d="M.16,144.67C7.84,140,17.39,133.46,24,129.51c9.77-5.81,25.66-14.14,40.57-21.72,5.51-2.81,14.1,8.85,17.59,13,3.32,4,16.11,11.38,17.88,6.16,2.69-7.93,2.16-37.94,2.16-37.94S121,55.65,96.38,59c-4.65.64-8.64,2-17.11,5.44C53.58,74.86,23.7,94.69.16,107.67" transform="translate(0.17)"/>
-                <path class="cls-5" d="M94.68,78.34c-32,0-67.22-10.1-94.41-19.54L.16,98.35c26.38,2.94,60.87,10.73,96.68,10.73,44.23,0,78.38-6,103.16-13.12V60.44c-28,9.1-65.41,17.9-105.32,17.9" transform="translate(0.17)"/>
-                <path class="cls-6" d="M200,60c-28,9.1-65.41,17.9-105.32,17.9C60.91,77.92,27.35,67.78.27,58.38" transform="translate(0.17)"/>
-                <path class="cls-6" d="M.16,97.93c26.38,2.94,60.87,10.73,96.68,10.73,44.23,0,78.38-6,103.16-13.13" transform="translate(0.17)"/>
-                <path class="cls-4" d="M60.7,111.36s21.58,15.1,24.81,13.48S127,99,127,99L94.68,75.22l-34.87,31.1Z" transform="translate(0.17)"/>
-                <path class="cls-4" d="M200,111.35c-8.81-3.61-17.45-7.78-23.34-9.7C153.47,94.1,86.59,59,86.59,59L57.5,74.37s44.19,20.27,64.69,30c19.86,9.41,56,28.15,77.81,37.38" transform="translate(0.17)"/>
-                <path class="cls-4" d="M103.31,58.5s-1.62,65.26-3.24,68.5,30.21-9.17,30.74-12.94,4.86-35.6,1.62-38.84S106.54,56.89,103.31,58.5Z" transform="translate(0.17)"/>
-              </g>
+
+          <g id="belt-white" class="cls-3">
+            <path class="cls-12" d="M59.81,106.32c-22.69-3.41-27.2-4.5-46-6.1-4.53,1-7.32,4-13.65,7.45v36.81c7.68-4.67,17.23-11.21,23.87-15.16C33,124,46.71,116.74,60.45,109.71c-.34-1.73-.25-1.21-.64-3.39L82.65,86" transform="translate(0.35)"/>
+            <path class="cls-12" d="M103,67.49c-6.84-3.75-11.26-5.13-15-7.46.17-1.34,7.19-3.18,9.22-3.46,2.56-.35,6.18,1.78,6.14,3.51L103,67.49" transform="translate(0.35)"/>
+            <path class="cls-12" d="M131.64,107.78c22.17-.58,43.58-4.72,68.36-11.82V60.44c-28,9.1-44,14.27-67.18,15.37" transform="translate(0.35)"/>
+            <path class="cls-12" d="M.16,98.35.27,58.8c16.4,5.69,43.63,13.65,60,16.81L82.65,86l-21,18.71A5.37,5.37,0,0,1,57.35,106C46.52,104.52,3.44,98.72.16,98.35Z" transform="translate(0.35)"/>
+            <path class="cls-12" d="M60.43,109.83A3.72,3.72,0,0,0,62,112.24c4.69,3.21,20.77,14,23.53,12.6,3.24-1.62,15.47-10,15.47-10l.93-20L82.65,86,61.17,105.11a3.22,3.22,0,0,0-1,3Z" transform="translate(0.35)"/>
+            <path class="cls-12" d="M101.91,94.86C85.72,87.26,67.1,78.75,60.23,75.61A1.47,1.47,0,0,1,60.16,73L86.59,59,103,67.49l-1.07,27.37" transform="translate(0.35)"/>
+            <path class="cls-12" d="M131.06,112.24c0-1.45.58-3.18.58-4.46,18.63-2.56,36.92-4.21,45-6.13,5.89,1.92,14.53,6.09,23.34,9.7v30.38C181.48,133.89,131.06,112.24,131.06,112.24Z" transform="translate(0.35)"/>
+            <path class="cls-12" d="M103.31,58.5S101,123.17,100.07,127c-1,4.11,30.21-9.17,30.74-12.94s4.86-35.6,1.62-38.84S106.54,56.89,103.31,58.5Z" transform="translate(0.35)"/>
+            <g id="beltShadow">
+              <path class="cls-12" d="M101,116.12c-.27,4.64-.35,7.35-.59,8.84-.6,3.69-17.13,1.29-11.8-1.86C90.44,122,101.05,114.49,101,116.12Z" transform="translate(0.35)"/>
+              <path class="cls-12" d="M103.29,59.44" transform="translate(0.35)"/>
+              <path class="cls-13" d="M131.17,78.13a1.49,1.49,0,0,1,.46,1.11c-.08,8.06-1.65,29.35-3.2,33.76-1.35,3.87-18.22,11-24.67,12.93a1.54,1.54,0,0,1-2-1.63v0a1.55,1.55,0,0,1,1.15-1.34c2.94-.75,5.19-2.38,9-4.56,1.67-1,5.39-31.84,3.22-43.95,2.6,7.8-.77,41.94-1,42.64s2.2-.5,3.08-.75c1.45-.41,5-15.11,4.58-33.74,1.36,8.73-1.06,30.13-1.78,32.65-.28,1,4-3.69,4.57-4.45,3.06-4.5,7.75-25.51,4-34.18C128,75.18,129.84,76.83,131.17,78.13Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M132.7,112.24l8.48,3.65s-4.82-3.37-1.39-5.25,39.82-9,39.82-9l-46.34,6.13Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M59.81,106.32a20,20,0,0,1,.27,3.58,18.4,18.4,0,0,1-4.63,2.38c-1-.09,3.16-4.46-5.75-6.43-11.06-2.44-29-3-36.58-2.26A76.52,76.52,0,0,0,5,104.72s5.1-3.38,7.38-4.1S59.81,106.32,59.81,106.32Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M78,92.31c2.19-2.19,3.78-4.38,5.37-4.38s17.58,7.94,17.58,7.94S99.67,107,97.8,110.76c1.58-5.31,2.47-13.93,2.25-14s-3.51,3.52-3.64,3.46S100.2,96,100,95.94s-5.53.7-5.67.64,5.38-1,5.24-1C95.72,94,85.51,89.62,83.72,90.22,80.14,91.41,78,92.31,78,92.31Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M80.17,86.44c-9.11-4-17.52-9-21.47-9.78s-16.55-3.83-26.14-6.5C57.39,78,80.17,86.44,80.17,86.44Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M99.46,124.45c-9.47.83-2.67-4.9-2.67-4.9s-9,4.94-7.9,5.41c1.94.8,8.42,1.23,9.7.59S99.46,124.45,99.46,124.45Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M101.15,80.13a109.85,109.85,0,0,1-.66,12.13l-13-5.82s7.06,2.79,10.27,3.15c.25,0-2.83-3.69-3.44-4.86.25,0,4.67,4.71,5,4.59.57-.2-5.81-12.66-6-13.24,1,1.5,6.64,12,6.71,11.8A46.17,46.17,0,0,0,101.15,80.13Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M108.66,66c2.06,3.64,5,28.5-1.39,53.55C112,94.86,109.42,68.32,108.66,66Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M46.08,105.45c-4.16,2.43-22.44,7.49-39.24,18.88C23.85,113.9,43.72,107.27,46.08,105.45Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M201.81,117.35c-4.57-1.53-16.19-8.07-35.83-13.18C185,110.07,198.89,116.77,201.81,117.35Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M194.47,128c-4.57-1.53-33.27-14.07-52.91-19.18C160.62,114.67,191.55,127.37,194.47,128Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M184.78,118.36c-4.57-1.53-14.12-7-33.76-12.06C170.08,112.19,181.86,117.78,184.78,118.36Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M39.24,103.16c-4.16,2.42-19.65,3.5-36.44,14.89C19.8,107.61,36.88,105,39.24,103.16Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M194.94,87.44C186.45,90.57,163.4,95,137,99,167.73,92.13,192,88.1,194.94,87.44Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M196.39,78.7a322.47,322.47,0,0,1-57.51,14.53C166.59,87,189.42,80.28,196.39,78.7Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M184.21,74.73c-8.49,3.14-13.72,6-36.78,9.64C174.21,77.44,181.3,75.39,184.21,74.73Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M90.61,108.77c-1,1.32-2,2.65-3.16,3.87a28.51,28.51,0,0,1-3.71,3.4,15.51,15.51,0,0,1-4.46,2.45,6.77,6.77,0,0,1-5-.13,7.91,7.91,0,0,0,4.74-.6,20.35,20.35,0,0,0,4.13-2.51c1.3-1,2.53-2.06,3.76-3.16S89.31,109.83,90.61,108.77Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M99.52,98.64c0,2.09-4.69,12.35-8.39,16a28.51,28.51,0,0,1-3.71,3.4A15.51,15.51,0,0,1,83,120.54c-1.61.54-5.52-.89-7-1.63,1.65.36,5.31,1.51,6.77.89a19.6,19.6,0,0,0,4.13-2.5c1.3-1,2.53-2.06,3.76-3.17C95.74,109.65,98.67,101.38,99.52,98.64Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M75.32,87.44a80.74,80.74,0,0,1-16.29-2c-5.37-1.08-10.67-2.44-16-3.79s-10.55-2.88-15.8-4.43l-7.87-2.33-7.85-2.39c5.34,1.21,10.63,2.6,15.92,4l15.86,4.21q7.9,2.14,15.89,4c2.66.61,5.32,1.2,8,1.68A63.16,63.16,0,0,0,75.32,87.44Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M74.27,89.41a95,95,0,0,1-16.77.75c-5.61-.13-11.2-.53-16.78-1S29.57,87.93,24.05,87,13,84.8,7.85,82.56a58,58,0,0,0,8.08,2.17l2.05.43,2.06.36c1.38.25,2.75.48,4.14.67,5.52.82,11.06,1.5,16.63,2S52,89.1,57.52,89.39c2.79.15,5.59.25,8.38.28A75.42,75.42,0,0,0,74.27,89.41Z" transform="translate(0.35)"/>
+              <path class="cls-13" d="M68.24,95a60.41,60.41,0,0,1-15,1.84c-5.07.07-10.12-.27-15.16-.69s-10-1.09-15-1.82l-7.48-1.15c-2.49-.43-5-.84-7.46-1.31,2.52.25,5,.56,7.53.82l7.51.88c5,.57,10,1.17,15,1.59s10,.82,15.07.91c1.25.05,2.51,0,3.77,0s2.51-.07,3.76-.17A59.28,59.28,0,0,0,68.24,95Z" transform="translate(0.35)"/>
+            </g>
+          </g>
+        </g>
+
+        
+        
+          
+          
               <g id="questionMark" class="cls-7">
                 <path class="cls-1" d="M72.16,112.33a72.07,72.07,0,0,1,.37-7.38A21.2,21.2,0,0,1,78.8,91.7a29.5,29.5,0,0,1,7.94-5.51q2-1.06,5.82-2.85a59.74,59.74,0,0,0,7.57-4.27,32.93,32.93,0,0,0,6.55-5.6,10.06,10.06,0,0,0,2.77-6.85,7.61,7.61,0,0,0-3.32-6.49,12.91,12.91,0,0,0-7.76-2.4A12.28,12.28,0,0,0,92.65,59a16.3,16.3,0,0,0-4.15,3,22.15,22.15,0,0,0-3,3.65,25.39,25.39,0,0,1-2.31,3.11L60.9,53.46A36,36,0,0,1,76,36.57a46,46,0,0,1,23.63-6.05,53.83,53.83,0,0,1,14.22,2,39,39,0,0,1,13,6.22,31.78,31.78,0,0,1,9.42,11.21q3.6,6.93,3.6,16.89a36.85,36.85,0,0,1-3.23,15.56q-3.24,7-11.54,12.36a64.4,64.4,0,0,1-8.31,4.63c-2.83,1.3-5.44,2.61-7.84,3.91a29.67,29.67,0,0,0-5.91,4.09,6.59,6.59,0,0,0-2.31,5Zm.55,46.06V129.23h28.62v29.16Z" transform="translate(0.17)"/>
                 <path class="cls-2" d="M72.16,112.33a72.07,72.07,0,0,1,.37-7.38A21.2,21.2,0,0,1,78.8,91.7a29.5,29.5,0,0,1,7.94-5.51q2-1.06,5.82-2.85a59.74,59.74,0,0,0,7.57-4.27,32.93,32.93,0,0,0,6.55-5.6,10.06,10.06,0,0,0,2.77-6.85,7.61,7.61,0,0,0-3.32-6.49,12.91,12.91,0,0,0-7.76-2.4A12.28,12.28,0,0,0,92.65,59a16.3,16.3,0,0,0-4.15,3,22.15,22.15,0,0,0-3,3.65,25.39,25.39,0,0,1-2.31,3.11L60.9,53.46A36,36,0,0,1,76,36.57a46,46,0,0,1,23.63-6.05,53.83,53.83,0,0,1,14.22,2,39,39,0,0,1,13,6.22,31.78,31.78,0,0,1,9.42,11.21q3.6,6.93,3.6,16.89a36.85,36.85,0,0,1-3.23,15.56q-3.24,7-11.54,12.36a64.4,64.4,0,0,1-8.31,4.63c-2.83,1.3-5.44,2.61-7.84,3.91a29.67,29.67,0,0,0-5.91,4.09,6.59,6.59,0,0,0-2.31,5Zm.55,46.06V129.23h28.62v29.16Z" transform="translate(0.17)"/>
               </g>
             </g>
           </svg>
-          </div>
+          <span id="total"></span>
+     </div>
+     <div class="row topTextLower">
+        <p>The main purpose of this file is the start the conversion with a new partner. Get on the same page with your ability as it compares to their ability. It's a tool that you can use as it works for you. Change it as you like.</p>
+        <p>Partners with similar color to yours make for great partnership, Rise through the ranks together.</p>     
+      </div>      
+    </div>
+
+   
 
 <section class="form">
 
@@ -485,7 +563,6 @@ svg{
 
     getBeltHexColor = (el)=>{
          beltHexColor.forEach( obj =>{
-            //  console.log( typeof    el );
             if( el ===  Object.keys(obj)[0]){
                 document.getElementById('questionMark').setAttribute('opacity', '0' );
                 document.getElementById('bg').setAttribute('fill',Object.values(obj)[0] );
@@ -495,8 +572,7 @@ svg{
     }
 
     redrawStripes = (accoladePoints)=>{
-        console.log(accoladePoints);
-        let x = 1;
+        let x = 5;
         document.getElementById('stripeChld').remove();
 
         createLine = (x) =>{
@@ -517,7 +593,6 @@ svg{
             for(i=1; i <= accoladePoints; i++){
                 createLine(x);
                     x +=10 ; 
-                    console.log(x);   
              }
   
     }
@@ -585,7 +660,8 @@ svg{
                     )* parseInt(localStorage.getItem('avyTraining'));
      
        document.getElementById('beltColorId').innerHTML = beltColor(total);       
-       document.getElementById('total').innerHTML = ` # <span style="font-weight:800"> ${total}<\span>`;
+       document.getElementById('total').innerHTML = `<span style="font-weight:800">${total}<\span>`;
+        console.log("rank: " , total)
        return total;      
 
         }
