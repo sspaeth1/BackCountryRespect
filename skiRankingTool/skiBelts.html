@@ -45,8 +45,9 @@
         padding: 2% 5%;
         color: #fff;
         align-content: center;
-
+        width: 100%;
     }
+
     .bottom{
         display: flex;
         flex-flow: row wrap;
@@ -89,7 +90,7 @@
         min-width: 270px
     }
 
-.topText{
+.topText, .footerTextLower{
     color: #2057A8;
     display: flex;
     flex-flow: column wrap;
@@ -102,22 +103,7 @@
    border-top: 1px solid #2057A8;
 }
 
-@media screen and (max-width: 700px ) {
-        .top .column:last-of-type{
-           margin-left: 0;
-        }
-        .listLeft{
-            margin: 0;
-            min-width: 270px
-        }
-    .listRight{
-        background: #4e7fac;
-        margin:0;
-        margin-top: 15px;
-        min-width: 270px
-    }
 
-    }
     
 /* end .slideOne */
 
@@ -296,6 +282,62 @@ svg{
     z-index: 10;
 }
 
+.row.topTextLower{
+    display:none;
+}
+
+
+@media screen and (max-width: 700px ) {
+        .top .column:last-of-type{
+           margin-left: 0;
+        }
+        .listLeft{
+            margin: 0;
+            min-width: 270px
+        }
+    .listRight{
+        background: #4e7fac;
+        margin:0;
+        margin-top: 15px;
+        min-width: 270px
+    }
+    .row.header{
+        max-height: 337px;
+        border-bottom: 3px solid #4e7fac;
+    }
+    .row.topTextLower, .topText > p,.row.footerTextLower  {
+    font-size: 12px;
+    display: flex;
+    }
+    .row.topTextLower{
+        visibility:collapse;
+    }
+    .topText .beltRank {
+        font-size: 2rem;
+        align-self: center;
+        margin:0;
+        padding-top: 0;
+    }
+    .topText h1{
+        font-size: .5rem; 
+    }
+    .topText h1 {
+    font-size: 1.5em;
+    align-self: center;
+    margin-bottom: 0;
+    }
+
+    svg{
+        max-height: 150px;
+        max-width: 150px;
+    }
+    .stripeRank{
+    font-size: 1rem;
+    align-self: center;
+    }
+}
+
+
 
 /* Dropdown end */
 
@@ -374,11 +416,7 @@ svg{
             </g>
           </svg>
           <span id="total"></span>
-     </div>
-     <div class="row topTextLower">
-        <p>The main purpose of this file is the start the conversion with a new partner. Get on the same page with your ability as it compares to their ability. It's a tool that you can use as it works for you. Change it as you like.</p>
-        <p>Partners with similar color to yours make for great partnership, Rise through the ranks together.</p>     
-      </div>      
+     </div>     
     </div>
 
    
@@ -548,6 +586,10 @@ svg{
   
 </div>
 
+<div class="row footerTextLower">
+    <p>The main purpose of this file is the start the conversion with a new partner. Get on the same page with your ability as it compares to their ability. It's a tool that you can use as it works for you. Change it as you like.</p>
+    <p>Partners with similar color to yours make for great partnership, Rise through the ranks together.</p>     
+  </div>   
 
 <script>
 
