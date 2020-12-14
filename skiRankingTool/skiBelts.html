@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belt Cert</title>
+</head>
+<body>
+    
+<style>
+    @font-face {
+        font-family: "AlegreyaSans" ;
+        src: url("/bcr-app/public/fonts/AlegreyaSans-Regular.woff");
+    }
+
+    *{
+        font-family:  "AlergreySans", sans-serif;
+    }
+    form{
+        display: flex;     
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    .row{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .column{
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .form{
+        background: rgb(101, 150, 195);
+        padding: 2% 5%;
+        color: #fff;
+        align-content: center;
+
+    }
+    .bottom{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-top:5%;
+    }
+
+    .top {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding:3%; 
+    }
+
+
+
+    .bottom h1{
+        background-color: #2057A8 ;
+        margin-top: 0;
+        padding:1vh;
+        font-size: 1rem;
+        min-height: 30px;
+        color: #c7daec;
+    }
+    .top .column:last-of-type{
+        margin-left: 2%;
+    }
+
+
+    .listLeft{
+        background: #4e7fac;
+        margin: 10px;
+        margin-left:0;
+    }
+    .listRight{
+        background: #4e7fac;
+        margin: 10px;
+        margin-right: 0;
+    }
+
+.topText{
+    color: #2057A8;
+    max-width: 36%;
+}
+
+@media screen and (max-width: 700px ) {
+        .top{
+          justify-content: center;            
+        }
+        .top .column:last-of-type{
+           margin-left: 0;
+        }
+
+    }
+    
+/* end .slideOne */
+
+label{
+    margin-top: 20px;
+    padding-bottom: 1%;
+}
+
+.checkStyle {
+    padding: 5px 40px;
+    }
+.checkStyle:last-of-type {
+    padding-bottom: 40px
+    }
+
+
+/* Drop Down */
+
+
+.big {
+  font-size: 1.2em;
+}
+
+.beltRank{
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom:0;
+}
+
+.stripeRank{
+    font-size: 2rem;
+    font-weight: 800;   
+    color: #6596c3;
+    margin-top: 0;
+}
+
+
+/* Custom dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.dropdown select {
+  background-color: #91b2d1;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  min-width: 100%;
+}
+
+
+.dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.dropdown::after {
+  color: rgba(0,0,0,.4);
+}
+
+svg{
+    margin: 2%;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    border: solid 5px #2057A8;
+}
+
+#resetButton {
+    background: #91b2d1;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #2057a8;
+    margin-top: 20px;
+}
+
+#resetButton:hover {
+    background: #2057a8;
+    color: #91b2d1;
+}
+
+.poweredBy, .poweredBy a{
+    margin: 2% 0;
+    font-size: 15px;
+    color: #c7daeb;
+}
+
+.poweredBy a:hover{
+    color: #fff;
+}
+
+
+/* Dropdown end */
+
+
+</style>
+
+
+<div class="column">
+  <div class="row">
+    <div class='topText'>
+        <h1>So What’s your skiing ability?</h1>
+<p>Goal: Easily communicate your abilities with potential ski partners </p>
+       <p class="beltRank"> I'm a<span id="beltColorId"> ___  </span>belt 
+        <span id="total" style="color:grey; font-size: 15px">  </span></p>
+       <div class="stripeRank" id="beltStripesId"></div> 
+       <p>The main purpose of this file is the start the conversion with a new partner. Get on the same page with your ability as it compares to their ability. It's a tool that you can use as it works for you. Change it as you like.</p>
+        <p>Partners with similar color to yours make for great partnership, Rise through the ranks together.</p>     
+    </div>
+    <div class="svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.48 200">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #2057a8;
+                }
+          
+                .cls-2 {
+                  fill: #fff4eb;
+                }
+          
+                .cls-3 {
+                  opacity: 1;
+                }
+          
+                .cls-4, .cls-5 {
+                  fill: #E2E2E2;
+                }
+          
+                .cls-4, .cls-5, .cls-6 {
+                  stroke: #282828;
+                }
+          
+                .cls-4, .cls-6 {
+                  stroke-width: 1.25px;
+                }
+          
+                .cls-5 {
+                  stroke-width: 0.63px;
+                }
+          
+                .cls-6 {
+                  fill: none;
+                }
+                .cls-7{
+                 stroke: #2057a8;
+                 stroke-width: 5px;
+                }
+              </style>
+            </defs>
+            <title>belt_rating_icon</title>
+            <g id="bg">
+              <rect id="bg" data-name="BG" fill="" x="0.17" width="200" height="200"/>
+            </g>
+            <g id="stripePrnt">
+                <g id="stripeChld">
+                </g>
+            </g>
+            <g id="belt">
+              <g id="belt-white" class="cls-3">
+                <path class="cls-4" d="M.16,144.67C7.84,140,17.39,133.46,24,129.51c9.77-5.81,25.66-14.14,40.57-21.72,5.51-2.81,14.1,8.85,17.59,13,3.32,4,16.11,11.38,17.88,6.16,2.69-7.93,2.16-37.94,2.16-37.94S121,55.65,96.38,59c-4.65.64-8.64,2-17.11,5.44C53.58,74.86,23.7,94.69.16,107.67" transform="translate(0.17)"/>
+                <path class="cls-5" d="M94.68,78.34c-32,0-67.22-10.1-94.41-19.54L.16,98.35c26.38,2.94,60.87,10.73,96.68,10.73,44.23,0,78.38-6,103.16-13.12V60.44c-28,9.1-65.41,17.9-105.32,17.9" transform="translate(0.17)"/>
+                <path class="cls-6" d="M200,60c-28,9.1-65.41,17.9-105.32,17.9C60.91,77.92,27.35,67.78.27,58.38" transform="translate(0.17)"/>
+                <path class="cls-6" d="M.16,97.93c26.38,2.94,60.87,10.73,96.68,10.73,44.23,0,78.38-6,103.16-13.13" transform="translate(0.17)"/>
+                <path class="cls-4" d="M60.7,111.36s21.58,15.1,24.81,13.48S127,99,127,99L94.68,75.22l-34.87,31.1Z" transform="translate(0.17)"/>
+                <path class="cls-4" d="M200,111.35c-8.81-3.61-17.45-7.78-23.34-9.7C153.47,94.1,86.59,59,86.59,59L57.5,74.37s44.19,20.27,64.69,30c19.86,9.41,56,28.15,77.81,37.38" transform="translate(0.17)"/>
+                <path class="cls-4" d="M103.31,58.5s-1.62,65.26-3.24,68.5,30.21-9.17,30.74-12.94,4.86-35.6,1.62-38.84S106.54,56.89,103.31,58.5Z" transform="translate(0.17)"/>
+              </g>
+              <g id="questionMark" class="cls-7">
+                <path class="cls-1" d="M72.16,112.33a72.07,72.07,0,0,1,.37-7.38A21.2,21.2,0,0,1,78.8,91.7a29.5,29.5,0,0,1,7.94-5.51q2-1.06,5.82-2.85a59.74,59.74,0,0,0,7.57-4.27,32.93,32.93,0,0,0,6.55-5.6,10.06,10.06,0,0,0,2.77-6.85,7.61,7.61,0,0,0-3.32-6.49,12.91,12.91,0,0,0-7.76-2.4A12.28,12.28,0,0,0,92.65,59a16.3,16.3,0,0,0-4.15,3,22.15,22.15,0,0,0-3,3.65,25.39,25.39,0,0,1-2.31,3.11L60.9,53.46A36,36,0,0,1,76,36.57a46,46,0,0,1,23.63-6.05,53.83,53.83,0,0,1,14.22,2,39,39,0,0,1,13,6.22,31.78,31.78,0,0,1,9.42,11.21q3.6,6.93,3.6,16.89a36.85,36.85,0,0,1-3.23,15.56q-3.24,7-11.54,12.36a64.4,64.4,0,0,1-8.31,4.63c-2.83,1.3-5.44,2.61-7.84,3.91a29.67,29.67,0,0,0-5.91,4.09,6.59,6.59,0,0,0-2.31,5Zm.55,46.06V129.23h28.62v29.16Z" transform="translate(0.17)"/>
+                <path class="cls-2" d="M72.16,112.33a72.07,72.07,0,0,1,.37-7.38A21.2,21.2,0,0,1,78.8,91.7a29.5,29.5,0,0,1,7.94-5.51q2-1.06,5.82-2.85a59.74,59.74,0,0,0,7.57-4.27,32.93,32.93,0,0,0,6.55-5.6,10.06,10.06,0,0,0,2.77-6.85,7.61,7.61,0,0,0-3.32-6.49,12.91,12.91,0,0,0-7.76-2.4A12.28,12.28,0,0,0,92.65,59a16.3,16.3,0,0,0-4.15,3,22.15,22.15,0,0,0-3,3.65,25.39,25.39,0,0,1-2.31,3.11L60.9,53.46A36,36,0,0,1,76,36.57a46,46,0,0,1,23.63-6.05,53.83,53.83,0,0,1,14.22,2,39,39,0,0,1,13,6.22,31.78,31.78,0,0,1,9.42,11.21q3.6,6.93,3.6,16.89a36.85,36.85,0,0,1-3.23,15.56q-3.24,7-11.54,12.36a64.4,64.4,0,0,1-8.31,4.63c-2.83,1.3-5.44,2.61-7.84,3.91a29.67,29.67,0,0,0-5.91,4.09,6.59,6.59,0,0,0-2.31,5Zm.55,46.06V129.23h28.62v29.16Z" transform="translate(0.17)"/>
+              </g>
+            </g>
+          </svg>
+          </div>
+
+<section class="form">
+
+<form action="post" id="formReset">
+    <div class="top">
+        <div class="column">
+            <label for="BackcountryDays">    Backcountry Days per Year    </label>
+            <div class="dropdown big">    
+            <select BackcountryDays="" id="BackcountryDays" >
+                    <option value="0" selected> 0</option>
+                    <option value="4"> 1-3</option>
+                    <option value="8"> 4-20</option>
+                    <option value="12"> 21-49</option>
+                    <option value="16"> 50+</option>
+                </select>
+                </div>
+            <label for="resortDays">Resort Days per Season</label>
+            <div class="dropdown big">
+            <select name="resortDays" id="resortDays">
+                <option value="0" selected> 0</option>
+                <option value="1"> 1-3</option>
+                <option value="2"> 4-20</option>
+                <option value="3"> 21-49</option>
+                <option value="4"> 50+</option>
+            </select>
+            </div>
+        
+            <label for="sideCountryDays"> Side/Slack Country Days per Season</label>
+            <div class="dropdown big">
+            <select name="sideCountryDays" id="sideCountryDays">
+                <option value="0" selected> 0</option>
+                <option value="2"> 1-3</option>
+                <option value="4"> 4-20</option>
+                <option value="6"> 21-49</option>
+                <option value="8"> 50+</option>
+            </select>
+            </div>
+        
+        </div>
+        <div class="column">
+            <label for="slopeAngle">Max Slope Angle Comfort</label>
+            <div class="dropdown big">    
+            <select name="slopeAngle" id="slopeAngle">
+                <option value="0" selected>Green </option>
+                <option value="1">Blue </option>
+                <option value="2">Black </option>
+                <option value="3">Double Black</option>
+                <option value="4">Over 45</option>
+                <option value="5">Over 50</option>
+                <option value="6">Hucking +40'</option>
+            </select>
+            </div>
+            
+            <label for="maxDayTouringEl">Max feet / Day Touring    </label>
+            <div class="dropdown big">
+            <select name="maxDayTouringEl" id="maxDayTouringEl">
+                <option value="0" selected>&lt;2000' </option>
+                <option value="1">2,000' </option>
+                <option value="2">4,000' </option>
+                <option value="3">6,000'</option>
+                <option value="4">8,000'</option>
+                <option value="5">10,000'</option>
+                <option value="6">12,000'</option>
+            </select>
+            </div>
+        
+            <label for="avyTraining">Formal Avy Training</label>
+            <div class="dropdown big">    
+            <select name="avyTraining" id="avyTraining">
+                    <option value="0" selected>none</option>
+                    <option value="2">Mtn Sense Course</option>
+                    <option value="2">Rec Level 1</option>
+                    <option value="3">Rec Level 2</option>
+                    <option value="3">Pro Level 1</option>
+                    <option value="4">Pro Level 2</option>
+        
+                </select>
+                </div>
+        </div>
+    </div>
+  
+  
+
+    <div class="bottom" title=".checkStyle">
+        <div class="listLeft" id="listLeft">
+
+            <h1>Variable Snow Comfort:</h1>
+            <div class="checkStyle">    
+            <input type="checkbox" name="" id="windboard" onclick="snowConditionsPointsCount(this)">
+                <label for="windboard"> Windboard</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="icy" id="icy"  onclick="snowConditionsPointsCount(this)">
+            <label for="icy">   Icy</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="cornice" id="cornice"  onclick="snowConditionsPointsCount(this)">
+            <label for="cornice">   Cornice</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="breakableCrust" id="breakableCrust"  onclick="snowConditionsPointsCount(this)">
+            <label for="breakableCrust"> Breakable Crust</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="_12inchPowder" id="_12inchPowder"  onclick="snowConditionsPointsCount(this)">
+            <label for="_12inchPowder">12” Powder</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="steepSlough" id="steepSlough"  onclick="snowConditionsPointsCount(this)">
+            <label for="steepSlough">Steep Slough</label>
+           </div>          
+        </div>
+
+        <div class="listRight">
+           
+            <h1>Additional Accolades:</h1>  
+            <div class="checkStyle">
+            <input type="checkbox" name="Pro Skier" id="proSkier" onclick="accoladePointsCount(this)">
+            <label for="proSkier">Pro Skier</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="certifiedGuide" onclick="accoladePointsCount(this)">
+            <label for="certifiedGuide"> Certified Guide</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="_2+SkiIntructor" onclick="accoladePointsCount(this)">
+            <label for="_2+SkiIntructor">Level 2+ Ski Intructor</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="navigationPro" onclick="accoladePointsCount(this)">
+            <label for="navigationPro">Navigation Pro</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="searchRescueTeam" onclick="accoladePointsCount(this)">
+            <label for="searchRescueTeam">Search and Rescue Team Member</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="alpineRacer" onclick="accoladePointsCount(this)">
+            <label for="alpineRacer"> Competitive Alpine Racer</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="nordicRacer" onclick="accoladePointsCount(this)">
+            <label for="nordicRacer"> Competitive Nordic Racer</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="localKnowledge" onclick="accoladePointsCount(this)">
+            <label for="localKnowledge"> Local Knowledge & Connections</label>
+            </div>    
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="survivedAvalanche" onclick="accoladePointsCount(this)">
+            <label for="survivedAvalanche">    Survived an Avalanche Rescue</label>
+            </div>
+            <div class="checkStyle">
+            <input type="checkbox" name="" id="_40hrsWildernessMed" onclick="accoladePointsCount(this)">
+            <label for="_40hrsWildernessMed">    40 hrs Wilderness Medical Training</label>
+            </div>   
+
+        </div>
+    </div>
+    <button type="button" id='resetButton' onclick="resetAll()">Reset</button>
+</form>
+<div class="poweredBy">coded by <a href="https://biochromatic.com/">Biochromatic</a></div>
+</section>
+  
+</div>
+
+
+<script>
+
+    setValuesZero = ()=>{
+        localStorage.setItem('BackcountryDays', 0);
+        localStorage.setItem('resortDays', 0);
+        localStorage.setItem('sideCountryDays', 0);
+        localStorage.setItem('slopeAngle', 0);
+        localStorage.setItem('maxDayTouringEl', 0);
+        localStorage.setItem('avyTraining', 1);
+        localStorage.setItem("accoladePoints", 0);
+        localStorage.setItem("snowConditionsPoints", 0);    
+    }
+    setValuesZero();
+
+
+    const beltHexColor = [
+                            {"white": '#F2F4F7'},
+                            {"yellow": '#FFF039'},
+                            {"orange": '#F48427'},
+                            {"purple": '#4421A5'},
+                            {"blue": '#2057A8'},
+                            {"green": '#53D12A'},
+                            {"brown": '#51321D'},
+                            {"black": '#151719'}
+                            ];
+
+   document.getElementById('bg').setAttribute('fill', 'rgb(32, 87, 168)' );
+
+    getBeltHexColor = (el)=>{
+         beltHexColor.forEach( obj =>{
+            //  console.log( typeof    el );
+            if( el ===  Object.keys(obj)[0]){
+                document.getElementById('questionMark').setAttribute('opacity', '0' );
+                document.getElementById('bg').setAttribute('fill',Object.values(obj)[0] );
+                return Object.values(obj)[0];
+            };
+         })
+    }
+
+    redrawStripes = (accoladePoints)=>{
+        console.log(accoladePoints);
+        let x = 1;
+        document.getElementById('stripeChld').remove();
+
+        createLine = (x) =>{
+            
+            let stripeChld = document.createElementNS("http://www.w3.org/2000/svg", 'g');
+            stripeChld.setAttribute('id', 'stripeChld');
+            let stripePrnt = document.getElementById('stripePrnt');
+            stripePrnt.appendChild(stripeChld);
+
+            stripeChld = document.getElementById('stripeChld');
+            let newStripe = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+            newStripe.setAttribute("d","M " + x + " 0 L " + x +" 200"); 
+            newStripe.setAttribute('class', 'addToStripeCount');
+            newStripe.style.stroke = "#fff"; 
+            newStripe.style.strokeWidth = "5px"; 
+            stripeChld.appendChild(newStripe);
+        }
+            for(i=1; i <= accoladePoints; i++){
+                createLine(x);
+                    x +=10 ; 
+                    console.log(x);   
+             }
+  
+    }
+  
+    
+    accoladePointsCount =(el) =>{
+            if(el.checked){
+                pointDelta = parseInt(localStorage.getItem('accoladePoints'));
+                pointDelta += 1;
+                localStorage.setItem('accoladePoints', pointDelta);
+                beltTotal();
+                beltColor(beltTotal());
+                let stripes = parseInt(localStorage.getItem('accoladePoints'));
+                document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`; 
+                if(stripes === 1){
+                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripe`; 
+                    redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
+                }else{
+                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`;
+                    redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
+                }            }
+             if(!el.checked && localStorage.getItem('accoladePoints') != "0"){
+                pointDelta = parseInt(localStorage.getItem('accoladePoints'));
+                pointDelta -= 1;
+                localStorage.setItem('accoladePoints', pointDelta);
+                beltTotal();
+                beltColor(beltTotal());
+                let stripes = parseInt(localStorage.getItem('accoladePoints'));
+                if(stripes === 0){
+                    document.getElementById('beltStripesId').innerText = "";
+                    redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
+                }else if(stripes === 1){
+                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripe`;
+                    redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
+                }else{
+                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`;
+                    redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
+                }
+            }                
+    }
+    snowConditionsPointsCount =(el)=>{
+        if(el.checked){
+                pointDelta = parseInt(localStorage.getItem('snowConditionsPoints'));
+                pointDelta += 2;
+                localStorage.setItem('snowConditionsPoints', pointDelta);
+                beltTotal();
+                beltColor(beltTotal());
+            }
+             if(!el.checked && localStorage.getItem('snowConditionsPoints') != "0"){
+                pointDelta = parseInt(localStorage.getItem('snowConditionsPoints'));
+                pointDelta -= 2;
+                localStorage.setItem('snowConditionsPoints', pointDelta);
+                beltTotal();
+                beltColor(beltTotal());
+            }    
+    }
+
+    beltTotal = () =>{
+        let total =  (parseInt(localStorage.getItem('BackcountryDays'))
+                    + parseInt(localStorage.getItem('resortDays'))
+                    + parseInt(localStorage.getItem('sideCountryDays')) 
+                    + parseInt(localStorage.getItem('slopeAngle'))
+                    + parseInt(localStorage.getItem('maxDayTouringEl'))
+                    + parseInt(localStorage.getItem('snowConditionsPoints'))
+                    )* parseInt(localStorage.getItem('avyTraining'));
+     
+       document.getElementById('beltColorId').innerHTML = beltColor(total);       
+       document.getElementById('total').innerHTML = ` # <span style="font-weight:800"> ${total}<\span>`;
+       return total;      
+
+        }
+
+        
+
+        beltColor = (val) =>{
+            let belt;
+            if(val === 0){
+                    belt = "";
+                    document.getElementById('beltColorId').innerText = ` ___ `;
+                    localStorage.setItem('belt', "white");
+                    getBeltHexColor(belt);
+                }else if(val >= 1 && val <= 9){
+                    belt = "white";
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "white");
+                    getBeltHexColor(belt);
+                }else if(val >= 10 && val <= 19){
+                    belt = "yellow"
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "yellow");
+                    getBeltHexColor(belt);
+                }else if(val >= 20 && val <= 29){
+                    belt = "orange"
+                    document.getElementById('beltColorId').innerText =`n ${belt}`;
+                    localStorage.setItem('belt', "orange");
+                    getBeltHexColor(belt);
+                }else if(val >= 30 && val <= 39){
+                    belt = "purple"
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "purple");
+                    getBeltHexColor(belt);
+                }else if(val >= 40 && val <= 49){
+                    belt = "blue";
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "blue");
+                    getBeltHexColor(belt);
+                }else if(val >= 50 && val <= 59){
+                    belt = "green";
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "green");
+                    getBeltHexColor(belt);
+                }else if(val >= 60 && val <= 69){
+                    belt = "brown";
+                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    localStorage.setItem('belt', "brown");
+                    getBeltHexColor(belt);
+                }else if(val >=70){
+                    belt = "black";
+                    document.getElementById('beltColorId').innerText = belt;
+                    localStorage.setItem('belt', "black");
+                    getBeltHexColor(belt);
+                }
+        }
+    document.getElementById('BackcountryDays').onchange = function(el){
+            localStorage.setItem("BackcountryDays", el.path[0].value);
+            beltTotal();
+            beltColor(beltTotal());
+    }
+    document.getElementById('resortDays').onchange = function(el){
+            localStorage.setItem("resortDays", el.path[0].value);
+             beltTotal();
+             beltColor(beltTotal());
+    }  
+    document.getElementById('sideCountryDays').onchange = function(el){
+            localStorage.setItem("sideCountryDays", el.path[0].value);
+            beltTotal();
+            beltColor(beltTotal());
+    }
+    document.getElementById('maxDayTouringEl').onchange = function(el){
+            localStorage.setItem("maxDayTouringEl", el.path[0].value);
+            beltTotal();
+            beltColor(beltTotal());
+    }
+    document.getElementById('slopeAngle').onchange = function(el){
+            localStorage.setItem("slopeAngle", el.path[0].value);
+            beltTotal();
+            beltColor(beltTotal());
+    }
+    document.getElementById('avyTraining').onchange = function(el){
+            localStorage.setItem("avyTraining", el.path[0].value);
+            beltTotal();
+            beltColor(beltTotal());
+    }
+
+   
+
+  function resetAll(){     
+           localStorage.clear();
+           setValuesZero();
+           beltTotal();
+           redrawStripes();
+            beltColor(beltTotal());
+            document.getElementById('beltStripesId').innerText = "";
+           document.getElementById('questionMark').setAttribute('opacity', '1' );
+           document.getElementById('bg').setAttribute('fill', '#2057A8' );
+           let stripeChld = document.createElementNS("http://www.w3.org/2000/svg", 'g');
+            stripeChld.setAttribute('id', 'stripeChld');
+            let stripePrnt = document.getElementById('stripePrnt');
+            stripePrnt.appendChild(stripeChld);
+            document.getElementById('formReset').reset();
+    }
+    
+
+
+
+</script>
+
+</body>
+</html>
