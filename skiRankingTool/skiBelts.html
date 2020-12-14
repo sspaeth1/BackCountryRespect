@@ -80,11 +80,13 @@
         background: #4e7fac;
         margin: 10px;
         margin-left:0;
+        min-width: 270px
     }
     .listRight{
         background: #4e7fac;
         margin: 10px;
         margin-right: 0;
+        min-width: 270px
     }
 
 .topText{
@@ -104,6 +106,16 @@
         .top .column:last-of-type{
            margin-left: 0;
         }
+        .listLeft{
+            margin: 0;
+            min-width: 270px
+        }
+    .listRight{
+        background: #4e7fac;
+        margin:0;
+        margin-top: 15px;
+        min-width: 270px
+    }
 
     }
     
@@ -112,6 +124,7 @@
 label{
     margin-top: 20px;
     padding-bottom: 1%;
+    min-width: 270px;
 }
 
 .checkStyle {
@@ -276,6 +289,12 @@ svg{
     bottom: 35px;
     mix-blend-mode: overlay;
 }
+.row.header{
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
 
 
 /* Dropdown end */
@@ -286,7 +305,7 @@ svg{
 
 <div class="container">
     <div class="column">
-   <div class="row">
+   <div class="row header">
         <div class='topText'>
             <h1>So What’s your skiing ability?</h1>
             <p>Goal: Easily communicate your abilities with potential ski partners </p>
@@ -571,7 +590,10 @@ svg{
 
     redrawStripes = (accoladePoints)=>{
         let x = 5;
-        document.getElementById('stripeChld').remove();
+        if(document.getElementById('stripeChld')){
+            document.getElementById('stripeChld').remove();
+        }
+
 
         createLine = (x) =>{
             
@@ -591,12 +613,14 @@ svg{
             for(i=1; i <= accoladePoints; i++){
                 createLine(x);
                     x +=10 ; 
-             }
-  
+             }   
+
     }
   
     
     accoladePointsCount =(el) =>{
+        accoladePoints = parseInt(localStorage.getItem('accoladePoints'));
+
             if(el.checked){
                 pointDelta = parseInt(localStorage.getItem('accoladePoints'));
                 pointDelta += 1;
@@ -619,7 +643,7 @@ svg{
                 beltTotal();
                 beltColor(beltTotal());
                 let stripes = parseInt(localStorage.getItem('accoladePoints'));
-                if(stripes === 0){
+                if(stripes === 0 ){
                     document.getElementById('beltStripesId').innerText = "";
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }else if(stripes === 1){
