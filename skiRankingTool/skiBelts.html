@@ -338,9 +338,25 @@ svg{
 }
 
 
-
 /* Dropdown end */
 
+@media print {
+    .form, h1,  .topText p:first-of-type, .footerTextLower{
+        display: none;
+    }
+    .row.header{
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+     .beltRank{
+        font-size:5rem;
+    }
+    .stripeRank{
+        text-align:right;
+    }
+}
 
 </style>
 
@@ -351,7 +367,7 @@ svg{
         <div class='topText'>
             <h1>So What’s your skiing ability?</h1>
             <p>Goal: Easily communicate your abilities with potential ski partners </p>
-           <p class="beltRank"> I'm a<span id="beltColorId"> ___  </span>belt 
+           <p class="beltRank"> I'm a<span id="beltColorId">&nbsp;___&nbsp;</span>belt 
         </p>
             <div class="stripeRank" id="beltStripesId"></div> 
         </div>
@@ -427,8 +443,8 @@ svg{
     <div class="top">
         <div class="column">
             <label for="BackcountryDays">    Backcountry Days per Year    </label>
-            <div class="dropdown big">    
-            <select BackcountryDays="" id="BackcountryDays" >
+            <div class="dropdown big" >    
+            <select BackcountryDays="" id="BackcountryDays" oninput="getOption(this)">
                     <option value="0" selected> 0</option>
                     <option value="4"> 1-3</option>
                     <option value="8"> 4-20</option>
@@ -438,7 +454,7 @@ svg{
                 </div>
             <label for="resortDays">Resort Days per Season</label>
             <div class="dropdown big">
-            <select name="resortDays" id="resortDays">
+            <select name="resortDays" id="resortDays" oninput="getOption(this)">
                 <option value="0" selected> 0</option>
                 <option value="1"> 1-3</option>
                 <option value="2"> 4-20</option>
@@ -449,7 +465,7 @@ svg{
         
             <label for="sideCountryDays"> Side/Slack Country Days per Season</label>
             <div class="dropdown big">
-            <select name="sideCountryDays" id="sideCountryDays">
+            <select name="sideCountryDays" id="sideCountryDays" oninput="getOption(this)">
                 <option value="0" selected> 0</option>
                 <option value="2"> 1-3</option>
                 <option value="4"> 4-20</option>
@@ -462,7 +478,7 @@ svg{
         <div class="column">
             <label for="slopeAngle">Max Slope Angle Comfort</label>
             <div class="dropdown big">    
-            <select name="slopeAngle" id="slopeAngle">
+            <select name="slopeAngle" id="slopeAngle" oninput="getOption(this)">
                 <option value="0" selected>Green </option>
                 <option value="1">Blue </option>
                 <option value="2">Black </option>
@@ -475,7 +491,7 @@ svg{
             
             <label for="maxDayTouringEl">Max feet / Day Touring    </label>
             <div class="dropdown big">
-            <select name="maxDayTouringEl" id="maxDayTouringEl">
+            <select name="maxDayTouringEl" id="maxDayTouringEl" oninput="getOption(this)">
                 <option value="0" selected>&lt;2000' </option>
                 <option value="1">2,000' </option>
                 <option value="2">4,000' </option>
@@ -488,7 +504,7 @@ svg{
         
             <label for="avyTraining">Formal Avy Training</label>
             <div class="dropdown big">    
-            <select name="avyTraining" id="avyTraining">
+            <select name="avyTraining" id="avyTraining" oninput="getOption(this)">
                     <option value="1" selected>none</option>
                     <option value="2">Mtn Sense Course</option>
                     <option value="2">Rec Level 1</option>
@@ -600,8 +616,9 @@ svg{
         localStorage.setItem('slopeAngle', 0);
         localStorage.setItem('maxDayTouringEl', 0);
         localStorage.setItem('avyTraining', 1);
-        localStorage.setItem("accoladePoints", 0);
-        localStorage.setItem("snowConditionsPoints", 0);    
+        localStorage.setItem('accoladePoints', 0);
+        localStorage.setItem('snowConditionsPoints', 0);
+        localStorage.setItem('total', 0);    
     }
     setValuesZero();
 
@@ -670,12 +687,12 @@ svg{
                 beltTotal();
                 beltColor(beltTotal());
                 let stripes = parseInt(localStorage.getItem('accoladePoints'));
-                document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`; 
+                document.getElementById('beltStripesId').innerHTML = `with ${stripes} stripes`; 
                 if(stripes === 1){
-                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripe`; 
+                    document.getElementById('beltStripesId').innerHTML = `with ${stripes} stripe`; 
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }else{
-                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`;
+                    document.getElementById('beltStripesId').innerHTML = `with ${stripes} stripes`;
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }            }
              if(!el.checked && localStorage.getItem('accoladePoints') != "0"){
@@ -686,13 +703,13 @@ svg{
                 beltColor(beltTotal());
                 let stripes = parseInt(localStorage.getItem('accoladePoints'));
                 if(stripes === 0 ){
-                    document.getElementById('beltStripesId').innerText = "";
+                    document.getElementById('beltStripesId').innerHTML = "";
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }else if(stripes === 1){
-                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripe`;
+                    document.getElementById('beltStripesId').innerHTML = `with ${stripes} stripe`;
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }else{
-                    document.getElementById('beltStripesId').innerText = `with ${stripes} stripes`;
+                    document.getElementById('beltStripesId').innerHTML = `with ${stripes} stripes`;
                     redrawStripes(parseInt(localStorage.getItem('accoladePoints')))
                 }
             }                
@@ -725,7 +742,7 @@ svg{
      
        document.getElementById('beltColorId').innerHTML = beltColor(total);       
        document.getElementById('total').innerHTML = `<span style="font-weight:800">${total}<\span>`;
-        console.log("rank: " , total)
+        localStorage.setItem('total', total);
        return total;      
 
         }
@@ -736,84 +753,77 @@ svg{
             let belt;
             if(val === 0){
                     belt = "";
-                    document.getElementById('beltColorId').innerText = ` ___ `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;___&nbsp;"
                     localStorage.setItem('belt', "white");
                     getBeltHexColor(belt);
                 }else if(val >= 1 && val <= 9){
                     belt = "white";
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "white");
                     getBeltHexColor(belt);
                     document.getElementById('total').setAttribute('style', 'mix-blend-mode:difference; color: #333;');
                 }else if(val >= 10 && val <= 19){
                     belt = "yellow"
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "yellow");
                     getBeltHexColor(belt);
                 }else if(val >= 20 && val <= 29){
                     belt = "orange"
-                    document.getElementById('beltColorId').innerText =`n ${belt}`;
+                    document.getElementById('beltColorId').innerHTML ="n&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "orange");
                     getBeltHexColor(belt);
                 }else if(val >= 30 && val <= 39){
                     belt = "purple"
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "purple");
                     getBeltHexColor(belt);
                 }else if(val >= 40 && val <= 49){
                     belt = "blue";
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "blue");
                     getBeltHexColor(belt);
                 }else if(val >= 50 && val <= 59){
                     belt = "green";
-                    document.getElementById('beltColorId').innerText = ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML = "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "green");
                     getBeltHexColor(belt);
                 }else if(val >= 60 && val <= 69){
                     belt = "brown";
-                    document.getElementById('beltColorId').innerText =  ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML =  "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "brown");
                     getBeltHexColor(belt);
                 }else if(val >=70){
                     belt = "black";
-                    document.getElementById('beltColorId').innerText =  ` ${belt} `;
+                    document.getElementById('beltColorId').innerHTML =  "&nbsp;"+ belt + "&nbsp;";
                     localStorage.setItem('belt', "black");
                     getBeltHexColor(belt);
                     document.getElementById('total').setAttribute('style', 'mix-blend-mode:difference');
                 }
         }
-    document.getElementById('BackcountryDays').onchange = function(el){
-            localStorage.setItem("BackcountryDays", el.path[0].value);
-            beltTotal();
-            beltColor(beltTotal());
-    }
-    document.getElementById('resortDays').onchange = function(el){
-            localStorage.setItem("resortDays", el.path[0].value);
-             beltTotal();
-             beltColor(beltTotal());
-    }  
-    document.getElementById('sideCountryDays').onchange = function(el){
-            localStorage.setItem("sideCountryDays", el.path[0].value);
-            beltTotal();
-            beltColor(beltTotal());
-    }
-    document.getElementById('maxDayTouringEl').onchange = function(el){
-            localStorage.setItem("maxDayTouringEl", el.path[0].value);
-            beltTotal();
-            beltColor(beltTotal());
-    }
-    document.getElementById('slopeAngle').onchange = function(el){
-            localStorage.setItem("slopeAngle", el.path[0].value);
-            beltTotal();
-            beltColor(beltTotal());
-    }
-    document.getElementById('avyTraining').onchange = function(el){
-            localStorage.setItem("avyTraining", el.path[0].value);
-            beltTotal();
-            beltColor(beltTotal());
-    }
 
+
+    getOption = (el) =>{
+        // if( el.options[el.selectedIndex].value)
+        localStorage.setItem(el.getAttribute('id'), el.options[el.selectedIndex].value);
+        if(el.options[el.selectedIndex].innerHTML === "none" &&
+                localStorage.getItem('BackcountryDays') === 0 &&
+                localStorage.getItem('resortDays') === 0 &&
+                localStorage.getItem('sideCountryDays') === 0 &&
+                localStorage.getItem('slopeAngle') === 0 &&
+                localStorage.getItem('maxDayTouringEl') === 0 &&
+                localStorage.getItem('snowConditionsPoints') === 0 &&
+                localStorage.getItem('avyTraining') === 0
+            ){
+            localStorage.setItem('total', 0);
+            document.getElementById('beltColorId').innerHTML = "&nbsp;___&nbsp;";       
+          document.getElementById('total').innerHTML = `<span style="font-weight:800">0<\span>`;
+        }else{
+            beltTotal();
+            beltColor(beltTotal());
+            console.log(localStorage.getItem('total'))
+        };
+
+    }
    
 
   function resetAll(){     
@@ -822,7 +832,7 @@ svg{
            beltTotal();
            redrawStripes();
             beltColor(beltTotal());
-            document.getElementById('beltStripesId').innerText = "";
+            document.getElementById('beltStripesId').innerHTML = "";
            document.getElementById('questionMark').setAttribute('opacity', '1' );
            document.getElementById('bg').setAttribute('fill', '#2057A8' );
            let stripeChld = document.createElementNS("http://www.w3.org/2000/svg", 'g');
@@ -832,9 +842,6 @@ svg{
             document.getElementById('formReset').reset();
     }
     
-
-
-
 </script>
 
 </body>
